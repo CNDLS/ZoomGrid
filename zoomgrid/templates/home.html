@@ -11,7 +11,7 @@
     {% endfor %}
   </tr>
   {% for row in grid_rows %}
-  <tr id="row_1" data-ordinal={{ row.ordinal }}>
+  <tr data-ordinal={{ row.ordinal }}>
     <td class="row"><label>{{ row.label }}</label></td>
     {% for column in grid_columns %}
       <td class="cell" data-column-nbr={{column.ordinal}} data-row-nbr={{row.ordinal}} >&nbsp;</td>

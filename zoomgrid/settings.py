@@ -99,6 +99,8 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'zoomgrid.urls'
 
+COFFEESCRIPT_EXECUTABLE = '/usr/local/bin/coffee'
+
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'zoomgrid.wsgi.application'
 
@@ -118,7 +120,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'zoomgrid'
+    'zoomgrid',
+    'coffeescript'
 )
 
 # A sample logging configuration. The only tangible logging
