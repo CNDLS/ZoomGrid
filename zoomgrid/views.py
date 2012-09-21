@@ -14,6 +14,11 @@ def home(request):
 	grid = Grid.objects.select_related('gridcolumn_set', 'gridrow_set', 'gridcell_set').get(pk=1)
 	grid_columns = grid.gridcolumn_set.all().order_by("ordinal")
 	grid_rows = grid.gridrow_set.all().order_by("ordinal")
+	
+	# serialize grid & all its associated data & dump it as json onto the page.
+	json_serializer = serializers.get_serializer("json")()
+	
+	
 	return render_to_response('home.html',
 					{ 'grid':grid,
 					  'grid_columns':grid_columns,

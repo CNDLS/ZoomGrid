@@ -1,22 +1,26 @@
 {% extends "base.html" %}
 
+
+
 {% block title %}{{ grid.label }}{% endblock %}
 
 {% block content %}
-<table id="grid" data-grid-id="{{ grid.id }}">
-  <tr>
-    <th id="x">&nbsp;</th>
-    {% for column in grid_columns %}
-      <th class="col" data-ordinal={{ column.ordinal }}><label>{{ column.label }}</label></th>
-    {% endfor %}
-  </tr>
-  {% for row in grid_rows %}
-  <tr data-ordinal={{ row.ordinal }}>
-    <td class="row"><label>{{ row.label }}</label></td>
-    {% for column in grid_columns %}
-      <td class="cell" data-column-nbr={{column.ordinal}} data-row-nbr={{row.ordinal}} >&nbsp;</td>
-    {% endfor %}
-  </tr>
-  {% endfor %}
-</table>
+<section class="grid-overlay">
+    <table id="grid" data-grid-id="{{ grid.id }}">
+      <tr>
+        <th id="x">&nbsp;</th>
+        {% for column in grid_columns %}
+          <th class="col" data-ordinal={{ column.ordinal }}><label>{{ column.label }}</label></th>
+        {% endfor %}
+      </tr>
+      {% for row in grid_rows %}
+      <tr data-ordinal={{ row.ordinal }}>
+        <td class="row"><label>{{ row.label }}</label></td>
+        {% for column in grid_columns %}
+          <td class="cell" data-column-nbr={{column.ordinal}} data-row-nbr={{row.ordinal}} >&nbsp;</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+</section>
 {% endblock %}
