@@ -2,3 +2,6 @@
 *.pot
 *.pyc
 local_settings.py
+lib/python2.6/*
+bin/*
+include/python*

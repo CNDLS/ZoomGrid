@@ -28,7 +28,10 @@
 		var app_url = "{{ request.META.SCRIPT_NAME }}";
 		// var username = "{{ request.user }}";
 		// var userid = "{{ request.user.id }}"
-		//alert(ajax_prefix)
+		{% autoescape off %}
+		var rows_json = {{ rows_json }}
+		var columns_json = {{ columns_json }}
+		{% endautoescape %}
 	</script>
 
 	<!--[if lt IE 9]>
@@ -36,7 +39,6 @@
 	<![endif]-->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.color.js"></script>
-	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.enumerable.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL}}{% coffeescript "js/zoomgrid.js.coffee" %}"></script>
 	<script type="text/javascript">
     	{% block extra_js %} {% endblock %}
